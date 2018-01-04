@@ -4,6 +4,7 @@
 #include <QTcpSocket>
 #include <QMessageBox>
 #include <QDebug>
+#include <QTextBrowser>
 
 class SocketThread : public QThread
 {
@@ -17,7 +18,11 @@ protected:
 private:
     QString m_qstrIP;
     int m_iPort;
-    QTcpSocket* TCPclient;
+    QString m_strReceiveDate;
+signals:
+    void receiveDateDisplay(QString a);
+public slots:
+    void disconnectSocket();
 };
 
 #endif // SOCKETTHREAD_H

@@ -7,7 +7,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-//    this->socket = new QTcpSocket(this);
+    ReceiveText =  new QTextBrowser(this);
+    ReceiveText->setGeometry(200,160,231,151);
     Socket =  new SocketThread(this);
     QList<QHostAddress> addressList = QNetworkInterface::allAddresses();
     foreach(QHostAddress i,addressList)
@@ -15,10 +16,13 @@ MainWindow::MainWindow(QWidget *parent) :
         if (i.protocol() == QAbstractSocket::IPv4Protocol)
         ui->comboBox->addItem(i.toString());
     }
+    connect(this->Socket,SIGNAL(receiveDateDisplay(QString)),this->ReceiveText,SLOT(append(QString)));
 }
 
 MainWindow::~MainWindow()
 {
+//    Socket->wait();
+    Socket->quit();
     delete ui;
 }
 
@@ -27,23 +31,12 @@ void MainWindow::on_Connect_clicked()
 
     QString IP;
     int port;
-    IP = ui->lineEdit_IP->text();
+//    IP = ui->lineEdit_IP->text();
+    IP = ui->comboBox->currentText();
     port = ui->lineEdit_Port->text().toInt();
     Socket->setIP(IP);
     Socket->setPort(port);
     Socket->start();
-//    socket->abort();
-//    this->socket->connectToHost(IP,port);
-//    if (socket->waitForConnected(1000))
-//    {
-//        QMessageBox::about(this,"提示","连接成功");
-//        connect(this->socket,SIGNAL(readyRead()),this,SLOT(readyread()));
-//    }
-//    else
-//    {
-//     QMessageBox::about(this,"提示","连接失败");
-//     return;
-//    }
 }
 
 void MainWindow::on_Disconnect_clicked()
@@ -52,16 +45,6 @@ void MainWindow::on_Disconnect_clicked()
     QMessageBox::about(this,"提示","断开连接");
 }
 
-void MainWindow::readyread()
-{
-    qDebug()<<"nihao";
-    QMessageBox::about(this,"提示","准备读取");
-//    QByteArray arr = this->socket->readAll();
-//    QDataStream* dst = new QDataStream(&arr,QIODevice::ReadOnly);
-//    QString str1,str2;
-//    (*dst)>>str1>>str2;
-//    this->ui->textBrowser->setText(str1+str2);
-}
 
 
 

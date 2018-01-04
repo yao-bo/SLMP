@@ -14,16 +14,6 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QTextBrowser" name="textBrowser">
-    <property name="geometry">
-     <rect>
-      <x>185</x>
-      <y>121</y>
-      <width>241</width>
-      <height>171</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QTextEdit" name="portSet">
     <property name="geometry">
      <rect>
@@ -48,7 +38,7 @@
     <property name="geometry">
      <rect>
       <x>310</x>
-      <y>80</y>
+      <y>90</y>
       <width>121</width>
       <height>31</height>
      </rect>

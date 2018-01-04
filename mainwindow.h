@@ -12,6 +12,7 @@
 #include <QTextEdit>
 #include <QNetworkInterface>
 #include <QDebug>
+#include <QTextBrowser>
 #include "socketthread.h"
 
 namespace Ui {
@@ -21,17 +22,15 @@ class MainWindow;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
-
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-
+    QTextBrowser* ReceiveText;
 private:
     Ui::MainWindow *ui;
-//    QTcpSocket* socket;
     SocketThread* Socket;
+
 private slots:
-    void readyread();
     void on_Disconnect_clicked();
     void on_Connect_clicked();
 };
