@@ -7,6 +7,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->lineEdit_Port->setText("8080");
     ReceiveText =  new QTextBrowser(this);
     ReceiveText->setGeometry(200,160,231,151);
     Socket =  new SocketThread(this);
@@ -17,12 +18,14 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->comboBox->addItem(i.toString());
     }
     connect(this->Socket,SIGNAL(receiveDateDisplay(QString)),this->ReceiveText,SLOT(append(QString)));
+//    connect(this->Socket,&Socket::finished,Socket,&QObject::deleteLater);
+    connect(this->ui->Disconnect,SIGNAL(pressed()),Socket,SLOT(disconnectSocket()));
 }
 
 MainWindow::~MainWindow()
-{
-//    Socket->wait();
+{   
     Socket->quit();
+    Socket->wait();
     delete ui;
 }
 
@@ -41,7 +44,6 @@ void MainWindow::on_Connect_clicked()
 
 void MainWindow::on_Disconnect_clicked()
 {
-//    this->socket->close();
     QMessageBox::about(this,"提示","断开连接");
 }
 

@@ -19,7 +19,9 @@ private:
     QString m_qstrIP;
     int m_iPort;
     QString m_strReceiveDate;
+    bool m_bDisconnect;
 signals:
+    void connectFailed();
     void receiveDateDisplay(QString a);
 public slots:
     void disconnectSocket();

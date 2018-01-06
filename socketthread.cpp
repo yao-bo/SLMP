@@ -4,6 +4,7 @@ SocketThread::SocketThread(QWidget* parent):QThread(parent)
 {
     m_qstrIP="";
     m_iPort=0;
+    m_bDisconnect=false;
 }
 void SocketThread::setIP(QString IPAddress)
 {
@@ -17,7 +18,7 @@ void SocketThread::setPort(int port)
 
 void SocketThread::disconnectSocket()
 {
-
+    m_bDisconnect=1;
 }
 
 void SocketThread::run()
@@ -32,10 +33,17 @@ void SocketThread::run()
     else
     {
         qDebug()<<"连接失败";
+        emit connectFailed();
         return;
     }
-
-    while (true) {
+    while (TCPclient->state()==QAbstractSocket::ConnectedState) {
+        if(m_bDisconnect)
+          {
+            TCPclient->close();
+            qDebug()<<"close";
+            m_bDisconnect=0;
+            return;
+        }
 
         TCPclient->write("nihao");
         TCPclient->waitForBytesWritten(1000);
