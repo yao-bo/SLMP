@@ -14,6 +14,7 @@
 #include <QDebug>
 #include <QTextBrowser>
 #include "socketthread.h"
+#include "mainmenu.h"
 
 namespace Ui {
 class MainWindow;

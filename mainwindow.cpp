@@ -8,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->lineEdit_Port->setText("8080");
+    MainMenu* _ButtonGroup = new MainMenu(ui->widget_mainMenu);
     ReceiveText =  new QTextBrowser(this);
     ReceiveText->setGeometry(200,160,231,151);
     Socket =  new SocketThread(this);

@@ -14,9 +14,16 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    socketthread.cpp
+    socketthread.cpp \
+    mainmenu.cpp \
+    mainview.cpp \
+    socketwidget.cpp
 
 HEADERS  += mainwindow.h \
-    socketthread.h
+    socketthread.h \
+    mainmenu.h \
+    mainview.h \
+    socketwidget.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    socketwidget.ui

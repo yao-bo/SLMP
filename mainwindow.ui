@@ -6,29 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>470</width>
-    <height>376</height>
+    <width>606</width>
+    <height>441</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QTextEdit" name="portSet">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>80</y>
-      <width>111</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QComboBox" name="comboBox">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>40</y>
+      <x>310</x>
+      <y>10</y>
       <width>111</width>
       <height>31</height>
      </rect>
@@ -48,7 +38,7 @@
     <property name="geometry">
      <rect>
       <x>310</x>
-      <y>30</y>
+      <y>50</y>
       <width>121</width>
       <height>31</height>
      </rect>
@@ -57,9 +47,9 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>40</y>
-      <width>51</width>
+      <x>210</x>
+      <y>50</y>
+      <width>91</width>
       <height>21</height>
      </rect>
     </property>
@@ -69,7 +59,7 @@
      </font>
     </property>
     <property name="text">
-     <string>IP地址</string>
+     <string>远程主机IP地址</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -93,8 +83,8 @@
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>50</y>
+      <x>230</x>
+      <y>10</y>
       <width>51</width>
       <height>21</height>
      </rect>
@@ -108,29 +98,11 @@
      <string>本地主机</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>90</y>
-      <width>51</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>10</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>端口号</string>
-    </property>
-   </widget>
    <widget class="QSplitter" name="splitter">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>160</y>
+      <x>470</x>
+      <y>10</y>
       <width>91</width>
       <height>81</height>
      </rect>
@@ -149,13 +121,33 @@
      </property>
     </widget>
    </widget>
+   <widget class="QWidget" name="widget_mainMenu" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>80</y>
+      <width>101</width>
+      <height>301</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QWidget" name="widget_MainView" native="true">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>150</y>
+      <width>181</width>
+      <height>161</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>470</width>
+     <width>606</width>
      <height>21</height>
     </rect>
    </property>
