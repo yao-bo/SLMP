@@ -141,6 +141,16 @@
      </rect>
     </property>
    </widget>
+   <widget class="QLineEdit" name="_buttonId">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>110</y>
+      <width>41</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">

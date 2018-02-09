@@ -21,6 +21,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(this->Socket,SIGNAL(receiveDateDisplay(QString)),this->ReceiveText,SLOT(append(QString)));
 //    connect(this->Socket,&Socket::finished,Socket,&QObject::deleteLater);
     connect(this->ui->Disconnect,SIGNAL(pressed()),Socket,SLOT(disconnectSocket()));
+    connect(_ButtonGroup,SIGNAL(checkedId(int)),this,SLOT(id(int)));
 }
 
 MainWindow::~MainWindow()
@@ -48,7 +49,10 @@ void MainWindow::on_Disconnect_clicked()
     QMessageBox::about(this,"提示","断开连接");
 }
 
-
+void MainWindow::id(int id)
+{
+    ui->_buttonId->setText(QString::number(id));
+}
 
 
 

@@ -34,6 +34,7 @@ private:
 private slots:
     void on_Disconnect_clicked();
     void on_Connect_clicked();
+    void id(int id);
 };
 
 #endif // MAINWINDOW_H
