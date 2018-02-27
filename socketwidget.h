@@ -2,6 +2,10 @@
 #define SOCKETWIDGET_H
 
 #include <QWidget>
+#include <QNetworkInterface>
+#include "socketthread.h"
+
+class SocketThread;
 
 namespace Ui {
 class SocketWidget;
@@ -21,6 +25,10 @@ public:
 
 private:
     Ui::SocketWidget *ui;
+    SocketThread* Socket;
+private slots:
+    void on_Disconnect_clicked();
+    void on_Connect_clicked();
 };
 
 #endif // SOCKETWIDGET_H

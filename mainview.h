@@ -3,6 +3,13 @@
 
 #include <QWidget>
 #include <QVector>
+#include <QPushButton>
+#include <QLineEdit>
+#include <QStackedLayout>
+#include "socketwidget.h"
+
+class SocketWidget;
+
 
 class MainView : public QWidget
 {
@@ -10,11 +17,11 @@ class MainView : public QWidget
 public:
     explicit MainView(QWidget *parent = 0);
 private:
-    QVector<QWidget> _view;
-
+    QLineEdit *_viewSelect;
+    QStackedLayout *stackedLayout;
 signals:
 
 public slots:
-    void eviewSelect(int id);
+    void viewSelect(int id);
 };
 #endif // MAINVIEW_

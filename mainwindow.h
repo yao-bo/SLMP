@@ -13,8 +13,8 @@
 #include <QNetworkInterface>
 #include <QDebug>
 #include <QTextBrowser>
-#include "socketthread.h"
 #include "mainmenu.h"
+#include "mainview.h"
 
 namespace Ui {
 class MainWindow;
@@ -26,14 +26,9 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    QTextBrowser* ReceiveText;
 private:
     Ui::MainWindow *ui;
-    SocketThread* Socket;
-
 private slots:
-    void on_Disconnect_clicked();
-    void on_Connect_clicked();
     void id(int id);
 };
 
