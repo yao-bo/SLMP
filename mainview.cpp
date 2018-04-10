@@ -1,6 +1,8 @@
 #include "mainview.h"
 #include <QStackedLayout>
 #include <QVBoxLayout>
+#include "mylib.h"
+#include "background.h"
 MainView::MainView(QWidget *parent) : QWidget(parent)
 {    
 
@@ -20,10 +22,10 @@ MainView::MainView(QWidget *parent) : QWidget(parent)
     mainLayout->addWidget(_Pause);
     firstPage->setLayout(mainLayout);
 
-    QWidget *secondPage = new QWidget(this);
-    QPushButton *two = new QPushButton(tr("第二页"),secondPage);
-    secondPage->setStyleSheet("background-color:red;");
-    secondPage->setGeometry(QRect(50,100,100,100));
+//    QWidget *secondPage = new QWidget(this);
+//    QPushButton *two = new QPushButton(tr("第二页"),secondPage);
+//    secondPage->setStyleSheet("background-color:red;");
+//    secondPage->setGeometry(QRect(50,100,100,100));
 
     QWidget *thirdPage = new QWidget(this);
     QPushButton *three = new QPushButton(tr("第三页"),thirdPage);
@@ -35,16 +37,17 @@ MainView::MainView(QWidget *parent) : QWidget(parent)
     forthPage->setStyleSheet("background-color:gray;");
     forthPage->setGeometry(QRect(50,100,100,100));
 
+    Background *backGround = new Background(this);
+
     SocketWidget *socketWidget =  new SocketWidget(this);
 
 
     stackedLayout = new QStackedLayout(this);
     stackedLayout->addWidget(socketWidget);
     stackedLayout->addWidget(firstPage);
-    stackedLayout->addWidget(secondPage);
+    stackedLayout->addWidget(backGround);
     stackedLayout->addWidget(thirdPage);
     stackedLayout->addWidget(forthPage);
-
 
 }
 void MainView::viewSelect(int id)

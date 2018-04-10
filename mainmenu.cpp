@@ -18,10 +18,10 @@ MainMenu::MainMenu(QWidget *parent) : QWidget(parent)
     _vbox->addWidget(_logIn);
     _vbox->addStretch(1);
     this->setLayout(_vbox);
-    _buttonMenu->addButton(_overViewButton,1);
-    _buttonMenu->addButton(_alarmButton,2);
-    _buttonMenu->addButton(_manual,3);
-    _buttonMenu->addButton(_logIn,4);
+    _buttonMenu->addButton(_overViewButton,0);
+    _buttonMenu->addButton(_alarmButton,1);
+    _buttonMenu->addButton(_manual,2);
+    _buttonMenu->addButton(_logIn,3);
     connect(_buttonMenu,SIGNAL(buttonClicked(int)),this,SLOT(getId(int)));
 }
 void MainMenu::getId(int id)

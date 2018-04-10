@@ -28,6 +28,7 @@ public:
     ~MainWindow();
 private:
     Ui::MainWindow *ui;
+    void paintEvent(QPaintEvent *);
 private slots:
     void id(int id);
 };
