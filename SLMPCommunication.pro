@@ -31,11 +31,8 @@ FORMS    += mainwindow.ui \
     socketwidget.ui \
     background.ui
 
-#LIBS +="MyLib.dll"
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../Source/build-MyLib-Desktop_Qt_5_4_0_MinGW_32bit-Debug/release/ -lMyLib
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../Source/build-MyLib-Desktop_Qt_5_4_0_MinGW_32bit-Debug/debug/ -lMyLib
-else:unix: LIBS += -L$$PWD/../../Source/build-MyLib-Desktop_Qt_5_4_0_MinGW_32bit-Debug/ -lMyLib
+RESOURCES += \
+    image.qrc
 
-INCLUDEPATH += $$PWD/../../Source/build-MyLib-Desktop_Qt_5_4_0_MinGW_32bit-Debug/debug
-DEPENDPATH += $$PWD/../../Source/build-MyLib-Desktop_Qt_5_4_0_MinGW_32bit-Debug/debug
+DISTFILES +=

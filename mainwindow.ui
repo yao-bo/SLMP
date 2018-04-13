@@ -17,8 +17,8 @@
    <widget class="QLineEdit" name="_buttonId">
     <property name="geometry">
      <rect>
-      <x>550</x>
-      <y>20</y>
+      <x>0</x>
+      <y>0</y>
       <width>51</width>
       <height>20</height>
      </rect>

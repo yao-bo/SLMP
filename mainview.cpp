@@ -1,7 +1,6 @@
 #include "mainview.h"
 #include <QStackedLayout>
 #include <QVBoxLayout>
-#include "mylib.h"
 #include "background.h"
 MainView::MainView(QWidget *parent) : QWidget(parent)
 {    
@@ -12,6 +11,7 @@ MainView::MainView(QWidget *parent) : QWidget(parent)
     QWidget *firstPage = new QWidget(this);
     firstPage->setStyleSheet("background-color:yellow;");
     firstPage->setGeometry(QRect(50,100,100,100));
+//    firstPage->setWindowState(Qt::WindowMaximized);
     QPushButton *one = new QPushButton(tr("第一页"),firstPage);
     QVBoxLayout *mainLayout = new QVBoxLayout;
 //    mainLayout->addLayout(stackedLayout);
@@ -20,6 +20,7 @@ MainView::MainView(QWidget *parent) : QWidget(parent)
     mainLayout->addWidget(_Start);
     mainLayout->addWidget(_Stop);
     mainLayout->addWidget(_Pause);
+    mainLayout->addStretch(5);
     firstPage->setLayout(mainLayout);
 
 //    QWidget *secondPage = new QWidget(this);
@@ -42,7 +43,9 @@ MainView::MainView(QWidget *parent) : QWidget(parent)
     SocketWidget *socketWidget =  new SocketWidget(this);
 
 
+
     stackedLayout = new QStackedLayout(this);
+    stackedLayout->setSizeConstraint(QLayout::SetMaximumSize);
     stackedLayout->addWidget(socketWidget);
     stackedLayout->addWidget(firstPage);
     stackedLayout->addWidget(backGround);

@@ -3,7 +3,6 @@
 #include <QPainter>
 #include <QPixmap>
 #include <QPicture>
-#include <QDebug>
 Background::Background(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Background)

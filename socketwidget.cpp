@@ -6,7 +6,7 @@ SocketWidget::SocketWidget(QWidget *parent) :
     ui(new Ui::SocketWidget)
 {
     ui->setupUi(this);
-
+    this->setWindowState(Qt::WindowMaximized);
     Socket =  new SocketThread(this);
     QList<QHostAddress> addressList = QNetworkInterface::allAddresses();
     foreach(QHostAddress i,addressList)

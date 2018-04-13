@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>BKG.bmp</file>
+        <file>Button.jpg</file>
+    </qresource>
+</RCC>
