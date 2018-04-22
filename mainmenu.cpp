@@ -1,13 +1,15 @@
 #include "mainmenu.h"
 #include <QPixmap>
 #include <QIcon>
+#include <QPainter>
 MainMenu::MainMenu(QWidget *parent) : QWidget(parent)
 {
     QPixmap *_buttonBKG = new QPixmap(":/Button.jpg");
     QIcon *_buttonIcon = new QIcon(*_buttonBKG);
     QButtonGroup *_buttonMenu =  new QButtonGroup(this);
-    QPushButton *_overViewButton = new QPushButton(*_buttonIcon,tr("设备一览"),this);
+    QPushButton *_overViewButton = new QPushButton(tr("设备一览"),this);
     _overViewButton->setFixedSize(80,40);
+    _overViewButton->setStyleSheet("background:url(:/Button.jpg)");
     QPushButton *_alarmButton = new QPushButton(tr("报警"),this);
     _alarmButton->setFixedSize(80,40);
     QPushButton *_manual = new QPushButton(tr("手动"),this);

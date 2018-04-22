@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>12</x>
@@ -32,6 +32,9 @@
           <pointsize>10</pointsize>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:rgb(255, 255, 127)</string>
+        </property>
         <property name="text">
          <string>本地主机</string>
         </property>
@@ -42,6 +45,11 @@
       </item>
       <item row="0" column="2">
        <widget class="QPushButton" name="Connect">
+        <property name="styleSheet">
+         <string notr="true">
+background-image:url(:/Button.jpg);
+background_color:rgb(0, 255, 0)</string>
+        </property>
         <property name="text">
          <string>Connect</string>
         </property>
@@ -79,6 +87,9 @@
       </item>
       <item row="2" column="2">
        <widget class="QPushButton" name="Disconnect">
+        <property name="styleSheet">
+         <string notr="true">background-image:url(:/Button.jpg)</string>
+        </property>
         <property name="text">
          <string>Disconnect</string>
         </property>
