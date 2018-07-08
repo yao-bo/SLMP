@@ -2,6 +2,9 @@
 #include <QStackedLayout>
 #include <QVBoxLayout>
 #include "background.h"
+#include <QTimer>
+#include <QPainter>
+#include "testview.h"
 MainView::MainView(QWidget *parent) : QWidget(parent)
 {    
 
@@ -28,10 +31,10 @@ MainView::MainView(QWidget *parent) : QWidget(parent)
 //    secondPage->setStyleSheet("background-color:red;");
 //    secondPage->setGeometry(QRect(50,100,100,100));
 
-    QWidget *thirdPage = new QWidget(this);
-    QPushButton *three = new QPushButton(tr("第三页"),thirdPage);
-    thirdPage->setStyleSheet("background-color:green;");
-    thirdPage->setGeometry(QRect(50,100,100,100));
+    TestView *thirdPage = new TestView(this);
+
+
+
 
     QWidget *forthPage = new QWidget(this);
     QPushButton *four = new QPushButton(tr("第四页"),forthPage);
@@ -51,7 +54,7 @@ MainView::MainView(QWidget *parent) : QWidget(parent)
     stackedLayout->addWidget(backGround);
     stackedLayout->addWidget(thirdPage);
     stackedLayout->addWidget(forthPage);
-
+    setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 }
 void MainView::viewSelect(int id)
 {
@@ -60,3 +63,4 @@ void MainView::viewSelect(int id)
 // //   _viewSelect->setText(QString::number(id));
 //    _viewSelect->setText(QString::number(stackedLayout->currentIndex()));
 }
+

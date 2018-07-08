@@ -18,14 +18,16 @@ SOURCES += main.cpp\
     mainmenu.cpp \
     mainview.cpp \
     socketwidget.cpp \
-    background.cpp
+    background.cpp \
+    testview.cpp
 
 HEADERS  += mainwindow.h \
     socketthread.h \
     mainmenu.h \
     mainview.h \
     socketwidget.h \
-    background.h
+    background.h \
+    testview.h
 
 FORMS    += mainwindow.ui \
     socketwidget.ui \

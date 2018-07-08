@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>BKG.bmp</file>
         <file>Button.jpg</file>
+        <file>Conveyor.BMP</file>
     </qresource>
 </RCC>
